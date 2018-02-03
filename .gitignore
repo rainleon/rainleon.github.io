@@ -39,3 +39,6 @@ bootstrap-3.3.7-dist.zip
 bootstrap-3.3.7.zip
 bootstrap-3.3.7/
 bootstrap-3.3.7-dist/
+.sass-cache
+_site
+back_local
