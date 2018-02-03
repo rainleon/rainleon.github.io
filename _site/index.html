@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <!-- JQuery (used for bootstrap and jekyll search) -->
-    <script src="/Type-on-Strap/assets/js/jquery-3.2.1.min.js" ></script>
+    <script src="/assets/js/jquery-3.2.1.min.js" ></script>
     
     <!-- Main JS (navbar.js and katex_init.js)-->
-    <script defer=true src="/Type-on-Strap/assets/js/main.min.js"></script>
+    <script defer=true src="/assets/js/main.min.js"></script>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="/Type-on-Strap/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="/Type-on-Strap/assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://localhost:4000/Type-on-Strap/">
+    <link rel="canonical" href="http://localhost:4000/">
 
     <!-- RSS -->
-    <link rel="alternate" type="application/atom+xml" title="Type on Strap" href="http://localhost:4000//Type-on-Strap//feed.xml"/>
+    <link rel="alternate" type="application/atom+xml" title="雨人的博客" href="http://localhost:4000///feed.xml"/>
 
     <!-- Font Awesome -->
     <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" type="text/css" href="/Type-on-Strap/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
 
     <!-- Google Fonts -->
     
@@ -35,27 +35,45 @@
     
     <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script> -->
-    <link rel="stylesheet" type="text/css" href="/Type-on-Strap/assets/css/katex.min.css">
-    <script src="/Type-on-Strap/assets/js/katex.min.js">
+    <link rel="stylesheet" type="text/css" href="/assets/css/katex.min.css">
+    <script src="/assets/js/katex.min.js">
     </script>
     
 
     <!-- Google Analytics -->
+    
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-113518197-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
     
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.4.0 -->
 <meta name="generator" content="Jekyll v3.7.2" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/Type-on-Strap/" />
-<meta property="og:url" content="http://localhost:4000/Type-on-Strap/" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
 <script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/Type-on-Strap/","@context":"http://schema.org"}</script>
+{"@type":"WebSite","url":"http://localhost:4000/","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title> Type on Strap</title>
+    <title> 雨人的博客</title>
     <meta name="description" content="A website with blog posts and pages">
     -->
 </head>
@@ -65,12 +83,12 @@
     
     <!-- Logo and title -->
 	<div class="branding">
-		<a href="/Type-on-Strap/">
-			<img class="avatar" src="/Type-on-Strap/assets/img/triangle.svg" alt=""/>
+		<a href="/">
+			<img class="avatar" src="/assets/img/triangle.svg" alt=""/>
 		</a>
 
 		<h1 class="site-title">
-			<a href="/Type-on-Strap/">Type on Strap</a>
+			<a href="/">雨人的博客</a>
 		</h1>
 	</div>
     
@@ -87,7 +105,7 @@
         
         
         <li>
-            <a class="clear" href="/Type-on-Strap/about/">
+            <a class="clear" href="/about/">
                 About
             </a>
         </li>
@@ -107,21 +125,21 @@
          
         
         <li>
-            <a class="clear" href="http://localhost:4000/Type-on-Strap/portfolio">
+            <a class="clear" href="http://localhost:4000/portfolio">
                 Portfolio
             </a>
         </li>
         
         
         <li>
-            <a class="clear" href="http://localhost:4000/Type-on-Strap/search">
+            <a class="clear" href="http://localhost:4000/search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </li>
         
         
         <li>
-            <a class="clear" href="http://localhost:4000/Type-on-Strap/tags">
+            <a class="clear" href="http://localhost:4000/tags">
                 <i class="fa fa-tags" aria-hidden="true"></i>
             </a>
         </li>
@@ -136,8 +154,14 @@
       <div class="home">
   
   <div id="main" class="call-out"
-  style="background-image: url('/Type-on-Strap/assets/img/pexels/triangular.jpeg')">
-    <p>Change header text in <code>_config.yml</code> <br> to update this feature.</p>
+  style="background-image: url('/assets/img/pexels/triangular.jpeg')">
+    <p>I strove with none,
+   for none was worth my strife;
+   Nature I lov’d,
+   and next to Nature, Art;<br/>
+   I warm’d both hands before the fire of life;<br/>
+   It sinks,<br/>
+   and I am ready to depart. </p>
 
   </div>
   
@@ -149,45 +173,26 @@
       <span>
           <header>
             <h1>
-              <a class="post-link" href="/Type-on-Strap/2014/11/30/sample-post.html">
-                Sample post
+              <a class="post-link" href="/2018/02/03/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html">
+                MAVEN工作原理
               </a>
             </h1>
             <p class="meta">
-              November 30, 2014
+              February 3, 2018
             </p>
           </header>
           <div class="excerpt">
-            Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincid...
-            <!--<a class="button" href="/Type-on-Strap/2014/11/30/sample-post.html">
-              Continue reading
-            </a>-->
-          </div>
-      </span>
-    </div>
-    
-    <div class="post-teaser">
-       
-      <div class="post-img">
-         <img src="/Type-on-Strap/assets/img/thumbnails/desk-messy.jpeg">
-      </div>
-      
-      <span>
-          <header>
-            <h1>
-              <a class="post-link" href="/Type-on-Strap/2014/11/29/feature-images.html">
-                Feature images
-              </a>
-            </h1>
-            <p class="meta">
-              November 29, 2014
-            </p>
-          </header>
-          <div class="excerpt">
-            This is an example of a post which includes a feature image specified in the front matter of the post. The feature image spans the full-width of the page, and is shown with the title on permalink pages.
+            maven插件的生命周期
 
 
-            <!--<a class="button" href="/Type-on-Strap/2014/11/29/feature-images.html">
+maven指令与生命周期阶段的关系
+
+
+mvn compile  //让当前项目经历生命周期中的1--&gt;7 阶段 ：完成编译主源代码编译
+mvn package  //让当前项目经历生命周期中的1--&gt;17阶段 ：完成打包
+mvn install  //让当前项目经历生命周期中的1--&gt;22阶段 ：完成包安装到本地仓库
+mvn deploy   //让当前生命经历生命周期中的1--&gt;23阶段 ：完成包部署到中心库中 ## 日常关注的阶段...
+            <!--<a class="button" href="/2018/02/03/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html">
               Continue reading
             </a>-->
           </div>
@@ -199,19 +204,28 @@
       <span>
           <header>
             <h1>
-              <a class="post-link" href="/Type-on-Strap/2014/11/28/markdown-and-html.html">
-                Markdown and HTML
+              <a class="post-link" href="/2017/12/12/Git-Rebase%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8.html">
+                使用git rebase 合并提交
               </a>
             </h1>
             <p class="meta">
-              November 28, 2014
+              December 12, 2017
             </p>
           </header>
           <div class="excerpt">
-            Jekyll supports the use of Markdown with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.
+            背景
+先看一个github贡献代码的操作流程：
 
-Tables have also been extended from Ma...
-            <!--<a class="button" href="/Type-on-Strap/2014/11/28/markdown-and-html.html">
+
+  fork一个项目，在自己的repo下面产生一个fork过来的项目副本
+  git clone 到本地做自己的修改，
+  将本地的修改 commit到仓库，push到github
+  发起一个pull request请求项目的owner来进行合并
+  owner合并代码到项目，完成代码的贡献
+
+
+当修改历史比较多的时候，也就是说，提交了n次的commit操作，这个时候，git 的提交历史会很不优雅，可能这些提交都是针对一个功能点做的改动...
+            <!--<a class="button" href="/2017/12/12/Git-Rebase%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8.html">
               Continue reading
             </a>-->
           </div>
@@ -223,19 +237,26 @@ Tables have also been extended from Ma...
       <span>
           <header>
             <h1>
-              <a class="post-link" href="/Type-on-Strap/2014/08/08/Markup-Syntax-Highlighting.html">
-                Markup: Syntax Highlighting
+              <a class="post-link" href="/2017/10/16/Linux%E4%B8%8B%E9%85%8D%E7%BD%AE%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91.html">
+                Linux配置端口转发
               </a>
             </h1>
             <p class="meta">
-              August 8, 2014
+              October 16, 2017
             </p>
           </header>
           <div class="excerpt">
-            «««&lt; Updated upstream
-From Michael’s Rose Minimal Mistakes. 1
-Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured languag...
-            <!--<a class="button" href="/Type-on-Strap/2014/08/08/Markup-Syntax-Highlighting.html">
+             ssh -C -f -N -g root@192.168.0.1 -L 20022:192.168.0.2:20022
+
+应用场景举例：
+实现下面两个Shell
+
+$ mysql -h10.13.34.119 -P3306 -uroot -p123456
+$ mysql -h10.13.34.120 -P3307 -uroot -p123456
+
+都是同样访问 10.13.34.119:3306 这个数据库服务器
+这时候我们就需要将 10.13.34.120:3307 映射到 10.13...
+            <!--<a class="button" href="/2017/10/16/Linux%E4%B8%8B%E9%85%8D%E7%BD%AE%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91.html">
               Continue reading
             </a>-->
           </div>
@@ -247,20 +268,27 @@ Syntax highlighting is a feature that displays source code, in different colors 
       <span>
           <header>
             <h1>
-              <a class="post-link" href="/Type-on-Strap/2013/11/18/blogging-with-title.html">
-                Blogging with title
+              <a class="post-link" href="/2017/06/28/%E5%85%B3%E4%BA%8EDevOps.html">
+                DevOps
               </a>
             </h1>
             <p class="meta">
-              November 18, 2013
+              June 28, 2017
             </p>
           </header>
           <div class="excerpt">
-            I am a BIG title
+            DevOps是什么
 
-This is a very tiny tiny post with less than 250 letters.
 
-            <!--<a class="button" href="/Type-on-Strap/2013/11/18/blogging-with-title.html">
+  DevOps是软件开发、运维和质量保证三个部门之间的沟通、协作和集成所采用的流程、方法和体系的一个集合。它是人们为了及时生产软件产品或服务，以满足某个业务目标，对开发与运维之间相互依存关系的一种新的理解。
+
+
+
+
+DevOps概念
+
+DevOps是一种融合了一系列基本原则和实践的方法论（并从这些实践中派生出了各种工具），意在帮助这些人员向着一个统一的共同目的努力：尽可能为公司提供更多价值。令人惊奇的是，这个问题还有一个非常简单的“银弹”：让生产端变得敏捷起来！ ...
+            <!--<a class="button" href="/2017/06/28/%E5%85%B3%E4%BA%8EDevOps.html">
               Continue reading
             </a>-->
           </div>
@@ -281,11 +309,13 @@ This is a very tiny tiny post with less than 250 letters.
                 <ul>
                 <!-- Social icons from Font Awesome, if enabled -->
                 
+
+
 <li>
-	<a href="http://localhost:4000///Type-on-Strap//feed.xml" title="Follow RSS feed">
+	<a href="mailto:brother_2000@126.com" title="Email">
 		<span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
         </span>
 	</a>
 </li>
@@ -302,10 +332,8 @@ This is a very tiny tiny post with less than 250 letters.
 
 
 
-
-
 <li>
-	<a href="https://github.com/sylhare" title="Follow on GitHub">
+	<a href="https://github.com/rainleon" title="Follow on GitHub">
 		<span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-github fa-stack-1x fa-inverse"></i>

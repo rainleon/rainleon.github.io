@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://localhost:4000/portfolio/circus">
+    <link rel="canonical" href="http://localhost:4000/2018/02/03/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="雨人的博客" href="http://localhost:4000///feed.xml"/>
@@ -63,22 +63,24 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Circus</title>
+<title>MAVEN工作原理</title>
 <meta name="generator" content="Jekyll v3.7.2" />
-<meta property="og:title" content="Circus" />
+<meta property="og:title" content="MAVEN工作原理" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/portfolio/circus" />
-<meta property="og:url" content="http://localhost:4000/portfolio/circus" />
+<meta name="description" content="maven插件的生命周期" />
+<meta property="og:description" content="maven插件的生命周期" />
+<link rel="canonical" href="http://localhost:4000/2018/02/03/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html" />
+<meta property="og:url" content="http://localhost:4000/2018/02/03/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2014-09-01T00:00:00+08:00" />
+<meta property="article:published_time" content="2018-02-03T00:00:00+08:00" />
 <script type="application/ld+json">
-{"headline":"Circus","dateModified":"2014-09-01T00:00:00+08:00","datePublished":"2014-09-01T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/portfolio/circus"},"@type":"BlogPosting","url":"http://localhost:4000/portfolio/circus","@context":"http://schema.org"}</script>
+{"headline":"MAVEN工作原理","dateModified":"2018-02-03T00:00:00+08:00","datePublished":"2018-02-03T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/02/03/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html"},"description":"maven插件的生命周期","@type":"BlogPosting","url":"http://localhost:4000/2018/02/03/Maven%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>Circus | 雨人的博客</title>
-    <meta name="description" content="">
+    <title>MAVEN工作原理 | 雨人的博客</title>
+    <meta name="description" content="maven插件的生命周期">
     -->
 </head>
 
@@ -157,15 +159,65 @@
     <div class="content">
       <article >
   <header id="main" style="background-image: url('/')">
-    <h1 id="Circus" class="title">Circus</h1>
+    <h1 id="MAVEN%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86" class="title">MAVEN工作原理</h1>
     <p class="meta">
-    September 1, 2014
+    February 3, 2018
     
     </p>
   </header>
-  <section class="post-content"><p><img src="/assets/img/portfolio/circus.png" alt="image" /></p>
+  <section class="post-content"><h2 id="maven插件的生命周期">maven插件的生命周期</h2>
+<p><img src="http://oqk2bkk90.bkt.clouddn.com/14834267005578.jpg" alt="" /></p>
 
-<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem <a>quia voluptas sit aspernatur</a> aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius <a>modi tempora incidunt</a> ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+<h2 id="maven指令与生命周期阶段的关系">maven指令与生命周期阶段的关系</h2>
+<p><img src="http://oqk2bkk90.bkt.clouddn.com/14830016483295.jpg" alt="" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn compile  //让当前项目经历生命周期中的1--&gt;7 阶段 ：完成编译主源代码编译
+mvn package  //让当前项目经历生命周期中的1--&gt;17阶段 ：完成打包
+mvn install  //让当前项目经历生命周期中的1--&gt;22阶段 ：完成包安装到本地仓库
+mvn deploy   //让当前生命经历生命周期中的1--&gt;23阶段 ：完成包部署到中心库中 ## 日常关注的阶段
+
+1 应该将resource资源文件准备好，放到指定的target目录下----process-resources 阶段；
+2 将java源文件编译成.class文件，然后将class 文件放置到对应的target目录下----compile阶段；
+3 将test类型的resource移动到指定的 target目录下------process-test-resource阶段；
+4 将test类型的java 源文件编译成class文件，然后放置到指定的target目录下------test-compile阶段；
+5 运行test测试用例-------test阶段；
+6 将compile阶段编译的class文件和resource资源打包成jar包或war包--------package阶段；
+7 将生成的包安装到本地仓库中------install阶段
+8 将生成的包部署到远程仓库中-----deploy阶段
+</code></pre></div></div>
+
+<h2 id="maven默认的生命周期和插件绑定">MAVEN默认的生命周期和插件绑定</h2>
+<p><img src="http://oqk2bkk90.bkt.clouddn.com/14830018675188.jpg" alt="" /></p>
+
+<h2 id="jar和war默认的生命周期">JAR和WAR默认的生命周期</h2>
+<p><img src="http://oqk2bkk90.bkt.clouddn.com/14830019553942.jpg" alt="" /></p>
+
+<h2 id="maven插件原理">MAVEN插件原理</h2>
+<p><img src="http://oqk2bkk90.bkt.clouddn.com/14830020691173.jpg" alt="" /></p>
+
+<p><img src="http://oqk2bkk90.bkt.clouddn.com/14830021059886.jpg" alt="" /></p>
+
+<h2 id="使用mvn的help插件">使用mvn的help插件</h2>
+<h3 id="查看maven-surefire-plugin插件test目标的详细介绍">查看maven-surefire-plugin插件test目标的详细介绍</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn help:describe -Dplugin=compiler
+mvn help:describe -Dplugin=compiler -Ddetail=true
+mvn help:describe -Dplugin=compiler -Dgoal=compile
+mvn surefire:help -Ddetail=true -Dgoal=test
+</code></pre></div></div>
+
+<h3 id="help插件的goals">help插件的goals</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>help:active-profiles
+help:all-profiles
+help:describe
+help:effective-pom
+help:effective-settings
+help:evaluate
+help:expressions
+help:help
+help:system
+</code></pre></div></div>
 
 </section>
    
@@ -181,8 +233,16 @@
         
             
         
-          <a class="button" href="/tags#Ipsum">
-            <p><i class="fa fa-tag fa-fw"></i> Ipsum</p>
+          <a class="button" href="/tags#Maven">
+            <p><i class="fa fa-tag fa-fw"></i> Maven</p>
+          </a>
+        
+          <a class="button" href="/tags#Maven生命周期">
+            <p><i class="fa fa-tag fa-fw"></i> Maven生命周期</p>
+          </a>
+        
+          <a class="button" href="/tags#markdown">
+            <p><i class="fa fa-tag fa-fw"></i> markdown</p>
           </a>
         
         </div>
@@ -201,18 +261,11 @@
   
   <div id="previous-post" class="post-nav-post">
       <p>Previous post</p>
-      <a href="/portfolio/safe">
-        Creative
+      <a href="/2017/12/12/Git-Rebase%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8.html">
+        使用git rebase 合并提交
       </a>
   </div>
   
-  
-  <div id="next-post" class="post-nav-post">
-      <p>Next post</p>
-      <a href="/portfolio/hanoi">
-        Tower of Hanoi
-      </a>
-  </div>
   
 </div>
 
