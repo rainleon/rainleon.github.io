@@ -14,12 +14,12 @@ theme_settings:
   # Header and footer text
   header_text: > #two or three lines to describe your site
      <p>I strove with none,
-        for none was worth my strife;
+        for none was worth my strife;<br/>
         Nature I lov’d,
         and next to Nature, Art;<br/>
         I warm’d both hands before the fire of life;<br/>
-        It sinks,<br/>
-        and I am ready to depart. </p>
+        It sinks,and I am ready to depart.<br/>
+        <div align="right"><font size="1">---Walter Savage Landor</font><div></div></div></p>
   header_text_feature_image: assets/img/pexels/triangular.jpeg
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
