@@ -3,6 +3,7 @@ layout: post
 title: 使用git rebase 合并提交
 subtitle: 使用git rebase 合并提交
 tags: [Git, rebase, 版本控制]
+category: 软件工程
 ---
 
 

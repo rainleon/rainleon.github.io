@@ -53,7 +53,7 @@ theme_settings:
   google_analytics: UA-113518197-1
   disqus_shortname:
   katex: true # Enable if using math markup
-  portfolio: true
+  portfolio: false
   search: true
   tags: true
   
