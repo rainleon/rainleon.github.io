@@ -44,11 +44,13 @@ mvn -DpushRemote=true -DallowSnapshots=false -DskipTestProject=true -DkeepBranch
 ```
 
 ## 最佳实践:
-验证并修复maven版本号的工具[有必要时候再做]
+
+1. 验证并修复maven版本号的工具[有必要时候再做]
 
 ```
 mvn -B build-helper:parse-version org.codehaus.mojo:versions-maven-plugin:2.5:set -DnewVersion=1.0.0-SNAPSHOT
 ```
+2. 请熟悉参考资料里的参数,有惊喜.
 
 ## 参考资料
 
