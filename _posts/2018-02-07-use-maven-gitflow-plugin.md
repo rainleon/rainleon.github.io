@@ -6,7 +6,42 @@ tags: [Git,Maven]
 category: 软件工程
 ---
 
-## 1.准备上线产物
+## 特性发布
+
+```
+从develop分支创建feature分支, 使用之前的版本号更新pom(s), 可选择更新或不更新版本号, 默认使用feature名字更新版本号更新pom(s)
+
+# 确保没有未提交的修改
+mvn gitflow:feature-start
+# 输入feature名称
+# 检查所有出现版本号的位置是否被正确修改
+# 进行开发
+# 提交所有未提交的修改
+将feature分支merge到develop分支, 使用之前的版本号更新pom(s), 删除feature分支
+
+mvn -DpushRemote=true -DskipTestProject=true -DkeepBranch=false gitflow:feature-finish
+# 选择要完成的feature名称(可以同时有多个feature)
+# 检查所有出现版本号的位置是否被正确修改
+# -DskipTestProject=true 跳过测试
+# -DkeepBranch=true 保留分支
+git push origin develop:develop
+# 可选的 触发ci发布新版本
+```
+
+
+## BUG修复
+
+```
+mvn gitflow:hotfix-start # 确定分支版本，如1.0.8.OSS
+git push origin hotfix/1.0.8.OSS
+mvn gitflow:hotfix-finish
+git push origin develop
+git push origin master
+```
+
+## 项目发布
+
+### 1.准备上线产物
 
 > 切换到项目develop分支并执行
 
@@ -16,10 +51,10 @@ mvn -DpushRemote=true -DallowSnapshots=false  gitflow:release-start
 
 PS: !!!执行完上面的操作,会自动同步release分支到远端仓库,这里配置了自动构建,如gitlab-ci,请静静的等待CI的结束   
  
-## 2.执行预发布操作
+### 2.执行预发布操作
 > 进入部署工具,如jenkins,将正式版本的产物如1.1.0,部署到预生产环境进行初步验证.没有预生产环境?好吧,那就使用测试环境替代.
 
-## 3.预发布环境回测
+### 3.预发布环境回测
 > 配合QA进行预生产环境产物的验证.验证不通过,如果需要重新修正代码,这时有两条路可以选:(各有优缺点,这里强烈推荐方案1)
 
 
@@ -30,13 +65,13 @@ PS: !!!执行完上面的操作,会自动同步release分支到远端仓库,这�
 
 
 
-## 4.执行上线操作
+### 4.执行上线操作
 > 进入部署工具,如jenkins,将正式版本的产物如1.1.0,部署到生产环境完成上线.
 
-## 5.生产环境回测
+### 5.生产环境回测
 > 配合QA进行生产环境的回归测试.其他同步骤3
 
-## 6.上线完成 
+### 6.上线完成 
 > 线上回归测试通过后.需要执行上线结束的相关工作,这时在项目执行:(当然,这步可能提前到步骤3和步骤5进行,并重新开一个新的小版本产物出来)
 
 ```
