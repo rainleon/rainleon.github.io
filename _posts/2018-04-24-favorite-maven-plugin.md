@@ -7,7 +7,15 @@ category: 软件工程
 ---
 
 
-2018-04-24-Maven插件
+## maven插件开发
+## maven插件debug
+使用 `mvn -Dmaven.surefire.debug test -f pom.xml`
+
+参考[文章](https://www.logicbig.com/tutorials/apache-maven/debug-test.html)
+
+## 2018-04-24-Maven插件
+
+
 ===
 
 
