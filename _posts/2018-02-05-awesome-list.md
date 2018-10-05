@@ -38,6 +38,17 @@ category: 神兵利器
 - [slant比较](https://www.slant.co)
 - [ddd](https://github.com/heynickc/awesome-ddd)
 
+### 链接收藏
+- [倾城之链](https://nicelinks.site/)
+- [系统设计入门](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
+- [开发者秘籍](https://dev-cheats.com/)
+- [Web-Series](https://github.com/wxyyxc1992/Web-Series)
+- [Git教程](https://git-scm.com/book/zh/v2)
+- [后端架构师图谱](https://github.com/xingshaocheng/architect-awesome)
+- [计算机资料整理](https://github.com/EZLippi/practical-programming-books)
+- [互联网公司架构](https://github.com/davideuler/architecture.of.internet-product)
+- [linux内核](https://github.com/MintCN/linux-insides-zh)
+- [后端面试题](https://github.com/monklof/Back-End-Developer-Interview-Questions)
 ### 绘图工具
 
 - [# OmniGraffle 基础入门（一）：从工具栏开始](https://sspai.com/post/41950)
