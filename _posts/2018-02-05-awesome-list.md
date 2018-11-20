@@ -37,6 +37,7 @@ category: 神兵利器
 - [alternativeto](https://alternativeto.net/)
 - [slant比较](https://www.slant.co)
 - [ddd](https://github.com/heynickc/awesome-ddd)
+- [mac-xin](https://www.macxin.com/archives/9193.html)
 
 ### 链接收藏
 - [倾城之链](https://nicelinks.site/)

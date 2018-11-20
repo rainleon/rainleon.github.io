@@ -9,10 +9,10 @@ category: 软件工程
 
 
 ## maven插件的生命周期
-![](http://oqk2bkk90.bkt.clouddn.com/14834267005578.jpg)
+![](http://img.aiuuwe.com/14834267005578.jpg)
 
 ## maven指令与生命周期阶段的关系
-![](http://oqk2bkk90.bkt.clouddn.com/14830016483295.jpg)
+![](http://img.aiuuwe.com14830016483295.jpg)
 
 
     mvn compile  //让当前项目经历生命周期中的1-->7 阶段 ：完成编译主源代码编译
@@ -31,15 +31,15 @@ category: 软件工程
     8 将生成的包部署到远程仓库中-----deploy阶段
 
 ## MAVEN默认的生命周期和插件绑定
-![](http://oqk2bkk90.bkt.clouddn.com/14830018675188.jpg)
+![](http://img.aiuuwe.com/14830018675188.jpg)
 
 ## JAR和WAR默认的生命周期
-![](http://oqk2bkk90.bkt.clouddn.com/14830019553942.jpg)
+![](http://img.aiuuwe.com/14830019553942.jpg)
 
 ## MAVEN插件原理
-![](http://oqk2bkk90.bkt.clouddn.com/14830020691173.jpg)
+![](http://img.aiuuwe.com/14830020691173.jpg)
 
-![](http://oqk2bkk90.bkt.clouddn.com/14830021059886.jpg)
+![](http://img.aiuuwe.com/14830021059886.jpg)
 
 
 ## 使用mvn的help插件

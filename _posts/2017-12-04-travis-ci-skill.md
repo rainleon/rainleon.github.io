@@ -183,10 +183,10 @@ category: 软件工程
 
 1. 使用github账户授权登录[travis－CI](https://travis-ci.org/)
 2. 进入[Profile页面](https://travis-ci.org/profile),点击同步repo
-    ![](http://oqk2bkk90.bkt.clouddn.com/14919915587703.png)
+    ![](http://img.aiuuwe.com/14919915587703.png)
 
 3. 选中制定项目同步
-    ![](http://oqk2bkk90.bkt.clouddn.com/14919915172046.png)
+    ![](http://img.aiuuwe.com/14919915172046.png)
 
 4. 在项目设置页面可以设置触发构建的条件，以及定义环境变量
 5. 在项目中添加.travis.yaml文件，提交即可触发一次travis－ci的构建：
