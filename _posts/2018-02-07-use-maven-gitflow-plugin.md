@@ -82,28 +82,28 @@ mvn -B build-helper:parse-version org.codehaus.mojo:versions-maven-plugin:2.5:se
 
 | 参数 |  说明 | 生命周期 | 其他 |
 | --- | --- | --- | --- |
-| skipTestProject| 是否跳过maven的test goal,默认false |release-start <br/>release-finish <br/>xxx-finish|   |
+| skipTestProject| 是否跳过maven的test goal,默认false |release-start release-finish xxx-finish|   |
 | skipFeatureVersion| 控制是否跳过feature名追加到maven项目版本号后面,默认是false|feature-start |   |
 | featureNamePattern| 特性分支名称规则| feature-start |   |
-| allowSnapshots | 是否允许有Snapshot的依赖 | release-start <br/>release-finish ||
-| commitDevelopmentVersionAtStart |  |  release-start <br/>release-finish  ||
-| fromCommit | 控制从哪次提交开启发布动作 | release-start |
-| fetchRemote | 是否同步远端分支到本地分支,默认true | xxx-start |
-| pushRemote | 是否同步到远端分支,默认false | xxx-start<br/>xxx-finish | start默认不会推送,finish默认推送.
-| keepBranch | 本地是否保留分支,默认false | xxx-finish | pushRemote为true,keepBranch为false,则会同步删除远端的分支
-| skipTag | 是否跳过Tag,默认值为false,(对于release和hotfix的操作,会打tag) |release-finish<br/>hotfix-finish|
+| allowSnapshots | 是否允许有Snapshot的依赖 | release-start release-finish ||
+| commitDevelopmentVersionAtStart |  |  release-start release-finish  ||
+| fromCommit | 控制从哪次提交开启发布动作 | release-start ||
+| fetchRemote | 是否同步远端分支到本地分支,默认true | xxx-start ||
+| pushRemote | 是否同步到远端分支,默认false | xxx-start xxx-finish | start默认不会推送,finish默认推送.|
+| keepBranch | 本地是否保留分支,默认false | xxx-finish | pushRemote为true,keepBranch为false,则会同步删除远端的分支|
+| skipTag | 是否跳过Tag,默认值为false,(对于release和hotfix的操作,会打tag) |release-finish hotfix-finish|
 | digitsOnlyDevVersion | 是否移除版本号额外的标志,默认false. | release-finish|如,release的版本号:1.1.0-Final,下一个develop的版本号会是:1.1.1-SNAPSHOT |
-|versionDigitToIncrement |下个develop版本从哪个位置迭代,默认为空.可指定[0,1,2,3...] |release-finish| 如versionDigitToIncrement=1,release版本号是1.2.3.4 ,则下一个版本号会是:1.3.0.0-SNAPSHOT |
-|  commitDevelopmentVersionAtStart | 控制develop分支的版本号变更的时机,默认为false |release-start<br/>release-finish| **true**:在开始做release的时候,也就是release-start的时候,先把develop分支的版本号变更到release的版本号,紧接着完成release分支的创建后,把版本变更到下一个版本号 <br/>**false**:在release分支做finish操作合并并到develop和master后触发develop版本的变更 |
-|useSnapshotInHotfix  | 是否允许使用快照方式发布hotfix | hotfix-start<br/>hotfix-finish |
-|releaseRebase  | 是否采用rebase的方式进行合并,默认false,使用merge的操作 |  |
+|versionDigitToIncrement |下个develop版本从哪个位置迭代,默认为空.可指定(0,1,2,3...) |release-finish| 如versionDigitToIncrement=1,release版本号是1.2.3.4 ,则下一个版本号会是:1.3.0.0-SNAPSHOT |
+|  commitDevelopmentVersionAtStart | 控制develop分支的版本号变更的时机,默认为false |release-start release-finish| **true**:在开始做release的时候,也就是release-start的时候,先把develop分支的版本号变更到release的版本号,紧接着完成release分支的创建后,把版本变更到下一个版本号 **false**:在release分支做finish操作合并并到develop和master后触发develop版本的变更 |
+|useSnapshotInHotfix  | 是否允许使用快照方式发布hotfix | hotfix-start hotfix-finish ||
+|releaseRebase  | 是否采用rebase的方式进行合并,默认false,使用merge的操作 |  ||
 |preReleaseGoals | 执行release操作前执行的maven的goals | |如,-DpreReleaseGoals=test |
 |postReleaseGoals | 执行release操作后需要执行的maven goals | |如 -DpostReleaseGoals=deploy  |
 |----|----|----|-----|
-|featureName | -B模式下指定分支名 |feature-start<br/>feature-finish |  |
+|featureName | -B模式下指定分支名 |feature-startfeature-finish |  |
 |fromBranch | -B模式下指定从那个分支开出 |hotfix-start|  |
-|hotfixVersion |-B 指定版本号 |hotfix-start<br/> hotfix-finish|  |
-|featureName | -B模式下指定分支名 |feature-start<br/>feature-finish |  |
+|hotfixVersion |-B 指定版本号 |hotfix-start hotfix-finish|  |
+|featureName | -B模式下指定分支名 |feature-startfeature-finish |  |
 |developmentVersion | -B模式下指定develop版本号 |release-finish |  |
 |releaseVersion | -B模式下指定release版本号 |release-start |  |
 
