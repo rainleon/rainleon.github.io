@@ -78,17 +78,7 @@ mvn -B build-helper:parse-version org.codehaus.mojo:versions-maven-plugin:2.5:se
 
 ### Maven-Gitflow插件参数说明
 
-<style> table td:nth-child(3) {
-    white-space: nowrap;
-}table td:nth-child(2) {
-    white-space: nowrap;
-}table tbody tr:nth-child(2n) {
-    background: rgba(158,188,226,0.12);
-}table th {
-    font-weight: bold; /*加粗*/
-    text-align: center !important; /*内容居中，加上 !important 避免被 Markdown 样式覆盖*/
-    background: rgba(158,188,226,0.2); /*背景色*/
-}</style>
+
 
 | 参数 |  说明 | 生命周期 | 其他 |
 | --- | --- | --- | --- |
@@ -116,6 +106,7 @@ mvn -B build-helper:parse-version org.codehaus.mojo:versions-maven-plugin:2.5:se
 |featureName | -B模式下指定分支名 |feature-start<br/>feature-finish |  |
 |developmentVersion | -B模式下指定develop版本号 |release-finish |  |
 |releaseVersion | -B模式下指定release版本号 |release-start |  |
+
 ### 相关连接
 - [maven-gitflow-plugin](https://github.com/aleksandr-m/gitflow-maven-plugin)
 - [versions-maven-plugin](http://www.mojohaus.org/versions-maven-plugin/)
