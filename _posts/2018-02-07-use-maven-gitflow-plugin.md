@@ -6,20 +6,20 @@ tags: [Git,Maven]
 category: 软件工程
 ---
 
-## 特性发布
+## 特性开发
 
 ```
 从develop分支创建feature分支, 使用之前的版本号更新pom(s), 可选择更新或不更新版本号, 默认使用feature名字更新版本号更新pom(s)
 
 # 确保没有未提交的修改
-mvn gitflow:feature-start
+mvn -DpushRemote=true gitflow:feature-start
 # 输入feature名称
 # 检查所有出现版本号的位置是否被正确修改
 # 进行开发
 # 提交所有未提交的修改
 将feature分支merge到develop分支, 使用之前的版本号更新pom(s), 删除feature分支
 
-mvn -DpushRemote=true -DskipTestProject=true -DkeepBranch=false gitflow:feature-finish
+mvn -DskipTestProject=true gitflow:feature-finish
 # 选择要完成的feature名称(可以同时有多个feature)
 # 检查所有出现版本号的位置是否被正确修改
 # -DskipTestProject=true 跳过测试
@@ -32,11 +32,8 @@ git push origin develop:develop
 ## BUG修复
 
 ```
-mvn gitflow:hotfix-start # 确定分支版本，如1.0.8.OSS
-git push origin hotfix/1.0.8.OSS
-mvn gitflow:hotfix-finish
-git push origin develop
-git push origin master
+mvn -B -DhotfixVersion=1.6.0-fixOrder gitflow:hotfix-start
+mvn -DskipTestProject=true gitflow:hotfix-finish
 ```
 
 ## 项目发布
@@ -49,33 +46,23 @@ git push origin master
 mvn -DpushRemote=true -DallowSnapshots=false  gitflow:release-start
 ```
 
-PS: !!!执行完上面的操作,会自动同步release分支到远端仓库,这里配置了自动构建,如gitlab-ci,请静静的等待CI的结束   
- 
+PS: !!!执行完上面的操作,会自动同步release分支到远端仓库,这里配置了自动构建,如gitlab-ci,请静静的等待CI的结束
+
 ### 2.执行预发布操作
 > 进入部署工具,如jenkins,将正式版本的产物如1.1.0,部署到预生产环境进行初步验证.没有预生产环境?好吧,那就使用测试环境替代.
 
 ### 3.预发布环境回测
-> 配合QA进行预生产环境产物的验证.验证不通过,如果需要重新修正代码,这时有两条路可以选:(各有优缺点,这里强烈推荐方案1)
-
-
-| 方案 | 优点 | 缺点 |
-|---|---|---|
-| 1. 原来的发布分支删除,不需要做finish操作.然后从develop再次做release-start的操作.这时会出一个小版本的产物,如1.1.1.(原则:仅在产物部署到生产环境,才做release-finish) | 版本清晰,tag出的名称和实际发的版本一致 | 和预定的上线版本不一致,有小版本的差异|
-| 2. 直接在release分支上做代码变更,并手工迭代release分支的版本号到1.1.1,推送到远端进行构建. | 逻辑上的版本仍然是预定的版本 | 上线tag出的版本名和真实maven打出的产物版本会不一致. |
-
+> 配合QA进行预生产环境产物的验证.验证不通过,将原来的发布分支删除,不需要做finish操作.然后从develop再次做release-start的操作.这时会出一个小版本的产物,如1.1.1.(原则:仅在产物部署到生产环境,才做release-finish)
 
 
 ### 4.执行上线操作
 > 进入部署工具,如jenkins,将正式版本的产物如1.1.0,部署到生产环境完成上线.
 
-### 5.生产环境回测
-> 配合QA进行生产环境的回归测试.其他同步骤3
-
-### 6.上线完成 
+### 6.上线完成
 > 线上回归测试通过后.需要执行上线结束的相关工作,这时在项目执行:(当然,这步可能提前到步骤3和步骤5进行,并重新开一个新的小版本产物出来)
 
 ```
-mvn -DpushRemote=true -DallowSnapshots=false -DskipTestProject=true -DkeepBranch=false gitflow:release-finish
+mvn -DpushRemote=true -DallowSnapshots=false -DskipTestProject=true gitflow:release-finish
 ```
 
 ## 最佳实践:
@@ -89,29 +76,46 @@ mvn -B build-helper:parse-version org.codehaus.mojo:versions-maven-plugin:2.5:se
 
 ## 参考资料
 
-### Maven-Gitflow插件Release参数说明
+### Maven-Gitflow插件参数说明
 
-| 生命周期 | 参数 | 说明 | 其他 |
-| --- | --- | --- | --- |
-| gitflow:release-start | skipTestProject  | 是否跳过maven的test goal,默认false |  |
-|   | allowSnapshots | 是否允许有Snapshot的依赖 |  |
-|   | commitDevelopmentVersionAtStart |  |  |
-|  | fromCommit | 控制从哪次提交开始发布 |  |
-|  | fetchRemote | 是否同步远端分支到本地分支,默认true |  |
-|  | pushRemote | 是否同步到远端分支,默认false |  |
-| --- | --- | --- | --- |
-| gitflow:release-finish | keepBranch | 默认false |  |
-|  | pushRemote |  |  |
-|  | skipTag | 是否跳过Tag,默认值为false,(对于release和hotfix的操作,会打tag) |  |
-|  | skipTestProject |  |  |
-|  | allowSnapshots | 是否允许有Snapshot的依赖 |  |
-|  | digitsOnlyDevVersion | 是否移除版本号额外的标志,默认false. | 如,release的版本号:1.1.0-Final,下一个develop的版本号会是:1.1.1-SNAPSHOT |
-|  | versionDigitToIncrement | 控制下一个开发的版本号是在第一个版本迭代,默认为空.可指定1. | 如versionDigitToIncrement=1,release版本号是1.2.3.4 ,则下一个版本号会是:1.3.0.0-SNAPSHOT |
-|  | commitDevelopmentVersionAtStart | 控制develop分支的版本号变更的时机,默认为false | true:在开始做release的时候,也就是release-start的时候,先把develop分支的版本号变更到release的版本号,紧接着完成release分支的创建后,把版本变更到下一个版本号 false:在release分支做finish操作合并并到develop和master后触发develop版本的变更 |
-|  |releaseRebase  | 是否采用rebase的方式进行合并,默认false,使用merge的操作 |  |
-|  | preReleaseGoals | 执行release操作前执行的maven的goals | 如,-DpreReleaseGoals=test |
-|  | postReleaseGoals | 执行release操作后需要执行的maven goals  |如 -DpostReleaseGoals=deploy  |
+<style> table td:nth-child(3) {
+    white-space: nowrap;
+}table td:nth-child(2) {
+    white-space: nowrap;
+}table tbody tr:nth-child(2n) {
+    background: rgba(158,188,226,0.12);
+}table th {
+    font-weight: bold; /*加粗*/
+    text-align: center !important; /*内容居中，加上 !important 避免被 Markdown 样式覆盖*/
+    background: rgba(158,188,226,0.2); /*背景色*/
+}</style>
 
+| 参数 |  说明 | 生命周期 | 其他 |
+| --- | --- | --- | --- |
+| skipTestProject| 是否跳过maven的test goal,默认false |release-start <br/>release-finish <br/>xxx-finish|   |
+| skipFeatureVersion| 控制是否跳过feature名追加到maven项目版本号后面,默认是false|feature-start |   |
+| featureNamePattern| 特性分支名称规则| feature-start |   |
+| allowSnapshots | 是否允许有Snapshot的依赖 | release-start <br/>release-finish ||
+| commitDevelopmentVersionAtStart |  |  release-start <br/>release-finish  ||
+| fromCommit | 控制从哪次提交开启发布动作 | release-start |
+| fetchRemote | 是否同步远端分支到本地分支,默认true | xxx-start |
+| pushRemote | 是否同步到远端分支,默认false | xxx-start<br/>xxx-finish | start默认不会推送,finish默认推送.
+| keepBranch | 本地是否保留分支,默认false | xxx-finish | pushRemote为true,keepBranch为false,则会同步删除远端的分支
+| skipTag | 是否跳过Tag,默认值为false,(对于release和hotfix的操作,会打tag) |release-finish<br/>hotfix-finish|
+| digitsOnlyDevVersion | 是否移除版本号额外的标志,默认false. | release-finish|如,release的版本号:1.1.0-Final,下一个develop的版本号会是:1.1.1-SNAPSHOT |
+|versionDigitToIncrement |下个develop版本从哪个位置迭代,默认为空.可指定[0,1,2,3...] |release-finish| 如versionDigitToIncrement=1,release版本号是1.2.3.4 ,则下一个版本号会是:1.3.0.0-SNAPSHOT |
+|  commitDevelopmentVersionAtStart | 控制develop分支的版本号变更的时机,默认为false |release-start<br/>release-finish| **true**:在开始做release的时候,也就是release-start的时候,先把develop分支的版本号变更到release的版本号,紧接着完成release分支的创建后,把版本变更到下一个版本号 <br/>**false**:在release分支做finish操作合并并到develop和master后触发develop版本的变更 |
+|useSnapshotInHotfix  | 是否允许使用快照方式发布hotfix | hotfix-start<br/>hotfix-finish |
+|releaseRebase  | 是否采用rebase的方式进行合并,默认false,使用merge的操作 |  |
+|preReleaseGoals | 执行release操作前执行的maven的goals | |如,-DpreReleaseGoals=test |
+|postReleaseGoals | 执行release操作后需要执行的maven goals | |如 -DpostReleaseGoals=deploy  |
+|----|----|----|-----|
+|featureName | -B模式下指定分支名 |feature-start<br/>feature-finish |  |
+|fromBranch | -B模式下指定从那个分支开出 |hotfix-start|  |
+|hotfixVersion |-B 指定版本号 |hotfix-start<br/> hotfix-finish|  |
+|featureName | -B模式下指定分支名 |feature-start<br/>feature-finish |  |
+|developmentVersion | -B模式下指定develop版本号 |release-finish |  |
+|releaseVersion | -B模式下指定release版本号 |release-start |  |
 ### 相关连接
 - [maven-gitflow-plugin](https://github.com/aleksandr-m/gitflow-maven-plugin)
 - [versions-maven-plugin](http://www.mojohaus.org/versions-maven-plugin/)
