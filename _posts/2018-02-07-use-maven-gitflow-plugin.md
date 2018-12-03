@@ -33,6 +33,11 @@ git push origin develop:develop
 
 ```
 mvn -B -DhotfixVersion=1.6.0-fixOrder gitflow:hotfix-start
+
+# 做bug修复的代码提交,提交完了执行
+git push origin hotfix/1.6.0-fixOrder
+
+# 上线完毕后执行finish
 mvn -DskipTestProject=true gitflow:hotfix-finish
 ```
 
@@ -62,7 +67,7 @@ PS: !!!执行完上面的操作,会自动同步release分支到远端仓库,这�
 > 线上回归测试通过后.需要执行上线结束的相关工作,这时在项目执行:(当然,这步可能提前到步骤3和步骤5进行,并重新开一个新的小版本产物出来)
 
 ```
-mvn -DpushRemote=true -DallowSnapshots=false -DskipTestProject=true gitflow:release-finish
+mvn -DskipTestProject=true gitflow:release-finish
 ```
 
 ## 最佳实践:
