@@ -19,7 +19,7 @@ category: 神兵利器
 - [https://github.com/carpedm20/awesome-hacking](https://github.com/carpedm20/awesome-hacking)
 - [https://github.com/herrbischoff/awesome-osx-command-line](https://github.com/herrbischoff/awesome-osx-command-line)
 - [https://github.com/chaozh/awesome-blockchain-cn](https://github.com/chaozh/awesome-blockchain-cn)
-
+- [https://github.com/jobbole/awesome-java-cn](https://github.com/jobbole/awesome-java-cn)
 ### homebrew神级软件
 
 - [mysql命令行](https://github.com/dbcli/mycli)
@@ -40,6 +40,9 @@ category: 神兵利器
 - [mac-xin](https://www.macxin.com/archives/9193.html)
 
 ### 链接收藏
+- [程序员变量命名](https://unbug.github.io/codelf/)
+- [nginx配置自动生成](https://nginxconfig.io/?index=index.php&php=false&proxy)
+- [shell命令收藏](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
 - [倾城之链](https://nicelinks.site/)
 - [系统设计入门](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
 - [开发者秘籍](https://dev-cheats.com/)
