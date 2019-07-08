@@ -10,6 +10,7 @@ category: 神兵利器
 ## github开源项目
 
 - [https://hellogithub.com/](https://hellogithub.com/)
+- [Awesome Quant](https://github.com/thuquant/awesome-quant)
 - [Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 - [GitHub-cheat](https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md)
 - [Awesome-mac](https://github.com/jaywcjlove/awesome-mac/blob/master/README-zh.md)
