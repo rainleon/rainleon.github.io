@@ -1,34 +1,58 @@
 ---
 layout: post
-title: Mac瑞士军刀
-subtitle: Mac瑞士军刀
-tags: [Mac,github]
+title: awesome-list
+subtitle: awesome
+tags: [awesome,github]
 category: 神兵利器
 ---
+## 收藏
 
-
-## github开源项目
-
-- [https://hellogithub.com/](https://hellogithub.com/)
-- [Awesome Quant](https://github.com/thuquant/awesome-quant)
-- [Git飞行规则](https://github.com/k88hudson/git-flight-rules)
-- [GitHub-cheat](https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md)
+### Awesome系列
+- [Awesome](https://github.com/sindresorhus/awesome)
+- [Awesome-quant](https://github.com/thuquant/awesome-quant)
 - [Awesome-mac](https://github.com/jaywcjlove/awesome-mac/blob/master/README-zh.md)
 - [Awesome-sysadmin](https://github.com/kahun/awesome-sysadmin)
 - [Awesome-shell](https://github.com/alebcay/awesome-shell)
 - [Awesome-docker](https://github.com/veggiemonk/awesome-docker)
-- [https://github.com/carpedm20/awesome-hacking](https://github.com/carpedm20/awesome-hacking)
-- [https://github.com/herrbischoff/awesome-osx-command-line](https://github.com/herrbischoff/awesome-osx-command-line)
-- [https://github.com/chaozh/awesome-blockchain-cn](https://github.com/chaozh/awesome-blockchain-cn)
-- [https://github.com/jobbole/awesome-java-cn](https://github.com/jobbole/awesome-java-cn)
-### homebrew神级软件
+- [Awesome-hacking](https://github.com/carpedm20/awesome-hacking)
+- [Awesome-osx-command-line](https://github.com/herrbischoff/awesome-osx-command-line)
+- [Awesome-blockchain-cn](https://github.com/chaozh/awesome-blockchain-cn)
+- [Awesome-java-cn](https://github.com/jobbole/awesome-java-cn)
+- [Awesome-ddd](https://github.com/heynickc/awesome-ddd)
+- [Awesome-windows](https://github.com/Awesome-Windows/Awesome)
+- [Awesome-architect](https://github.com/xingshaocheng/architect-awesome)
+- [Awesome-courses](https://github.com/prakhar1989/awesome-courses)
+- [Awesome-python](https://github.com/vinta/awesome-python)
+- [Awesome-font](https://github.com/FortAwesome/Font-Awesome)
+- [Awesome-machine-learning](https://github.com/josephmisiti/awesome-machine-learning)
+- [Awesome-public-datasets](https://github.com/awesomedata/awesome-public-datasets)
+- [Awesome-interview](https://github.com/MaximAbramchuck/awesome-interview-questions)
+- [Awesome-wechat-weapp](https://github.com/justjavac/awesome-wechat-weapp)
+- [Awesome-java](https://github.com/akullpp/awesome-java)
+- [Awesome-scalability](https://github.com/binhnguyennus/awesome-scalability)
+- [Awesome-python-cn](https://github.com/jobbole/awesome-python-cn)
+- [Awesome-docker](https://github.com/veggiemonk/awesome-docker)
+- [Awesome-tensorflow](https://github.com/jtoy/awesome-tensorflow)
+- [Awesome-remote-job](https://github.com/lukasz-madon/awesome-remote-job)
+- [Awesome-blockchain-cn](https://github.com/chaozh/awesome-blockchain-cn)
+- [Awesome-deep-learning](https://github.com/ChristosChristofidis/awesome-deep-learning)
+- [Awesome-harmony](https://github.com/Awesome-HarmonyOS/HarmonyOS)
 
+### Github开源项目
+- [https://hellogithub.com/](https://hellogithub.com/)
+- [Git飞行规则](https://github.com/k88hudson/git-flight-rules)
+- [GitHub-cheat](https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.zh-cn.md)
+- [The-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge)
+- [open-source-mac-os-apps](https://github.com/serhii-londar/open-source-mac-os-apps)
+- [https://github.com/nikitavoloboev/my-mac-os](https://github.com/nikitavoloboev/my-mac-os)
+
+
+### Homebrew软件
 - [mysql命令行](https://github.com/dbcli/mycli)
 - [mac瑞士军刀](https://github.com/rgcr/m-cli)
 
 
-### mac软件网站
-
+### Mac软件网站
 - [mac玩法](https://www.waerfa.com/)
 - [少数派](https://sspai.com/tag/)
 - [PS盒子](http://www.pshezi.com/)
@@ -37,10 +61,10 @@ category: 神兵利器
 - [爱情守望者](https://www.waitsun.com/)
 - [alternativeto](https://alternativeto.net/)
 - [slant比较](https://www.slant.co)
-- [ddd](https://github.com/heynickc/awesome-ddd)
 - [mac-xin](https://www.macxin.com/archives/9193.html)
+- [node-ppt](https://github.com/ksky521/nodeppt)
 
-### 链接收藏
+### RD进阶
 - [程序员变量命名](https://unbug.github.io/codelf/)
 - [nginx配置自动生成](https://nginxconfig.io/?index=index.php&php=false&proxy)
 - [shell命令收藏](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
@@ -54,8 +78,10 @@ category: 神兵利器
 - [互联网公司架构](https://github.com/davideuler/architecture.of.internet-product)
 - [linux内核](https://github.com/MintCN/linux-insides-zh)
 - [后端面试题](https://github.com/monklof/Back-End-Developer-Interview-Questions)
-### 绘图工具
 
+### 其他收藏
 - [# OmniGraffle 基础入门（一）：从工具栏开始](https://sspai.com/post/41950)
+
+
 ### 持续更新中......
 
