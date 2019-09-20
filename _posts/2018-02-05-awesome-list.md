@@ -37,6 +37,7 @@ category: 神兵利器
 - [Awesome-blockchain-cn](https://github.com/chaozh/awesome-blockchain-cn)
 - [Awesome-deep-learning](https://github.com/ChristosChristofidis/awesome-deep-learning)
 - [Awesome-harmony](https://github.com/Awesome-HarmonyOS/HarmonyOS)
+- [Awesome-java-books](https://github.com/sorenduan/awesome-java-books)
 
 ### Github开源项目
 - [https://hellogithub.com/](https://hellogithub.com/)
